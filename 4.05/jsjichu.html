@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+      <button onclick="alert('whats up?')">hihi</button>
+      <a href="javascript:alert('???')">aaa</a>
+
+
+      <script type="text/javascript">
+          var a = 123;
+          a = toString(a);
+          a = undefined ;
+          a = toString(a);
+          a = String(a);
+          // 建议使用String函数
+
+          a = Number(a);
+          a = "sdadas";
+          a = Boolean(a);
+          a = true + 456465;
+
+          // js中16进制0x开头 8进制0开头 2进制0b开头 但不是所有浏览器都可以识别
+             // 字符串纯数字转换为数字 否则则为NaN 布尔true转换为1 false转换为0  null转换为0
+             // undefined转换为NaN
+             // 可以使用parseInt函数强制转换为number  （将字符串中从左到右有效数字取出并转换为整数）
+             // 碰到非数字就会停止
+          // 可以指定进制 例如parseInt(a,10) 10进制
+          console.log(a);
+          //   var height = prompt("身高?");
+          //   var money =  prompt("钱?");
+          //   var shuai =  prompt("帅?");
+          //
+          //   if ((height > 180 && money > 1000) && shuai >500){
+          //       console.log("一定嫁")
+          //   }else if ((height > 180 || money > 1000) || shuai >500){
+          //       console.log("还行")
+          //   }else
+          // {
+          //     console.log("no")
+          // }
+          //
+          // var  num1 = +prompt("1=?");
+          // var  num2 = +prompt("2=?");
+          // var  num3 = +prompt("3=?");
+          //        if ( isNaN(num1) || isNaN(num2) || isNaN(num3)){
+          //            alert("???")
+          //        }else {
+          //
+          //            if (num1 < num2 && num1 < num3) {
+          //                if (num2 < num3) {
+          //                    alert(num1 + "," + num2 + "," + num3)
+          //                } else {
+          //                    alert(num1 + "," + num3 + "," + num2)
+          //                }
+          //
+          //            } else if (num2 < num1 && num2 < num3) {
+          //                if (num1 > num3) {
+          //                    alert(num2 + "," + num3 + "," + num1)
+          //                } else {
+          //                    alert(num2 + "," + num1 + "," + num3)
+          //                }
+          //            } else {
+          //                if (num1 > num2) {
+          //                    alert(num3 + "," + num2 + "," + num1)
+          //                } else {
+          //                    alert(num3 + "," + num1 + "," + num2)
+          //                }
+          //            }
+          //        }
+                 var score;
+                 score = prompt("成绩？");
+                 switch ( parseInt(score/10) ) {
+                     case 6:
+                         console.log("ok");
+                         break;
+                     case 7:
+                         console.log("ok");
+                         break;
+                     case 8:
+                         console.log("ok");
+                         break;
+                     case 9:
+                         console.log("ok");
+                         break;
+                     case 10:
+                         console.log("ok");
+                         break;
+                     default:
+                         console.log("no")
+                         break;
+
+
+                     
+                 }
+
+
+
+
+
+
+
+      </script>
+
+  
+</body>
+</html>
