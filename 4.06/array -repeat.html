@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,3,2,5,6,7,8,9];
+     for(var i =0;i<arr.length;i++){
+         var arr1 = arr[i];
+         for(var b=i+1;b<arr.length;b++){
+             if(arr1==arr[b]){
+                 arr.splice(b,1)
+                 b--;
+             }
+         }
+     }console.log(arr)
+</script>
+
+</body>
+</html>

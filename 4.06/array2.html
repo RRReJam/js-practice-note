@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       // var arr = ["1","2","3","4"];
+       //  console.log(arr);
+       //  for (var i ;i<arr.length;i++){
+       //      console.log(arr[i])
+       //  }
+
+         function Person(name,age){
+            this.name = name;
+            this.age = age;
+       }
+       Person.prototype.toString = function () {
+           return "Person[this.name,this.age";
+       }
+
+       var per = new Person("sf",12)
+       var per2 = new Person("qw",19)
+       var per3 = new Person("we",14)
+       var per4 = new Person("er",21)
+       var per5 = new Person("啥啥啥",99)
+        perArray = [per,per2,per3,per4,per5]
+        console.log(perArray);
+        var perbig = new Array();
+
+        for(var i =0;i<perArray.length;i++){
+            if (perArray[i].age>18){
+                perbig.push(perArray[i])
+            }
+
+        }
+        console.log(perbig)
+         </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function A() {
+        
+    }
+    function B(a) {
+        this.a = a
+
+    }
+    function C(a) {
+        if(a){
+            this.a = a
+        }
+        
+    }
+
+    function fun() {
+        alert("this")
+    }
+    var obj = {
+        name:"obj",
+        sayName: function() {
+            alert(this.name)
+        }
+    }
+    var obj2 = {
+        name:"obj2"
+    }
+    obj.sayName.apply(obj2)
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.toString = function () {
+        return "Person[this.name,this.age";
+    }
+
+    var per = new Person("sf",12)
+    console.log(per.name)
+
+
+
+
+</script>
+
+</body>
+</html>
