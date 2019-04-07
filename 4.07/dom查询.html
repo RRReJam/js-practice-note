@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <script>
+       window.onload = function (ev) {
+           var min1 = document.getElementById("min");
+           min1.onclick = function (ev1) {
+               var mim1 = document.getElementById('man');
+               alert(mim1.innerHTML);
+
+           }
+           var bt2 = document.getElementById('bt2');
+           bt2.onclick = function (ev1) {
+               var music = document.getElementById("music")
+               alert(music.innerText)
+           }
+       };
+   </script>
+   <p> 你喜欢哪首歌</p>
+   <ul id="music">
+       <li id="man">Man In The Mirror</li>
+       <li>heal the world</li>
+       <li>beat it </li>
+   </ul>
+<br />
+
+<button id="min">查找mim</button>
+   <button id="bt2">查找li</button>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #img{
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+<body>
+     <script>
+         window.onload = function (ev) {
+             var next = document.getElementById("next")
+             var img1 = document.getElementById("img1")
+             var imgArr = ['image/1.jpg','image/QQ图片20180328222749.png','image/QQ图片20190106012055.jpg']
+             var index = 0
+             var text = document.getElementById("text");
+             text.innerText="一共"+imgArr.length+"张照片，目前是第"+(index+1)+"张";
+             next.onclick =function (ev1) {
+                 index++;
+                 if(index>imgArr.length-1){
+                     index = 0
+                 }
+                 text.innerText="一共"+imgArr.length+"张照片，目前是第"+(index+1)+"张";
+                 img1.src = imgArr[index]
+             }
+             var last = document.getElementById("last")
+             last.onclick = function (ev1) {
+                 index--;
+                 if(index<0 ){
+                     index = imgArr.length-1
+                 }
+                 text.innerText="一共"+imgArr.length+"张照片，目前是第"+(index+1)+"张";
+                 img1.src=imgArr[index]
+             }
+         }
+     </script>
+     <div id="img">
+         <p id="text"></p>
+         <img id="img1" src="image/1.jpg">
+         <button id="next">下一张</button>
+         <button id="last">上一张</button>
+     </div>
+</body>
+</html>
