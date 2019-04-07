@@ -52,40 +52,53 @@
     };
     var checkre = document.getElementById("checkre")
     checkre.onclick=function (ev) {
-        for (var i=0;i<items.length;i++){
-            if(items[i].checked){
-                items[i].checked=false
-                che1.checked=false
-            }else{
-                items[i].checked=true
-                che1.checked=true
-            }
-        }
-    };
-    var commit =document.getElementById("commit")
-    commit.onclick=function (ev) {
-        var usercommit = [];
-        for(var i=0;i<items.length;i++){
-            if (items[i].checked){
+        for (var i = 0; i < items.length; i++) {
+            items[i].checked=!items[i].checked
+            var flag = true
+            for (var b = 0; b < items.length; b++) {
 
-                usercommit.push(items[i].value)
-            }
-        }
-        alert(usercommit)
-    };
-      for(var i=0;i<items.length;i++) {
-          items[i].onclick = function (){
-              var flag=true
-            for(var b=0;b<items.length;b++){
 
-                if(items[b].checked==false){
-                    var flag = false
+                if (items[b].checked == false) {
+                    var flag = false;
+                    break
+
                 }
             }
-            che1.checked=flag
+
+            che1.checked = flag
+
 
         }
-      }
+    }
+        var commit = document.getElementById("commit")
+        commit.onclick = function (ev) {
+            var usercommit = [];
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].checked) {
+
+                    usercommit.push(items[i].value)
+                }
+            }
+            alert(usercommit)
+        };
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function () {
+                var flag = true
+                for (var b = 0; b < items.length; b++) {
+
+
+                    if (items[b].checked == false) {
+                        var flag = false;
+                        break
+
+                    }
+                }
+
+                che1.checked = flag
+            }
+
+
+    }
 
 
 
