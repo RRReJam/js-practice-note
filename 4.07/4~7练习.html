@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form method="post">
+      你喜欢的歌? <input type="checkbox"  id="che1" />全选/全不选
+      <br>
+      <input type="checkbox"  name="items" value="this is it" />this is it
+      <input type="checkbox"  name="items" value="ben"/>ben
+      <input type="checkbox"  name="items" value="bad"/>bad
+      <input type="checkbox"  name="items" value="scream"/>scream
+      <br>
+      <input type="button"  id="checkall" value="全选"/>
+      <input type="button"  id="checkno" value="全不选"/>
+      <input type="button"  id="checkre" value="反选"/>
+      <input type="button" id="commit" value="提交"/>
+
+
+<script>
+
+    var items = document.getElementsByName("items")
+    var checkall = document.getElementById("checkall")
+    var che1 =document.getElementById("che1")
+    che1.onclick=function (ev) {
+        for (var i =0;i<items.length;i++){
+            if(che1.checked){
+                items[i].checked=true
+            }else{
+                items[i].checked=false
+            }
+
+        }
+
+    };
+    checkall.onclick = function (ev) {
+
+         for (var i=0;i<items.length;i++){
+             items[i].checked = true
+             che1.checked=true
+         }
+    };
+    var checkno = document.getElementById("checkno")
+    checkno.onclick= function (ev) {
+        for(var i=0;i<items.length;i++){
+            items[i].checked=false
+            che1.checked=false
+
+        }
+    };
+    var checkre = document.getElementById("checkre")
+    checkre.onclick=function (ev) {
+        for (var i=0;i<items.length;i++){
+            if(items[i].checked){
+                items[i].checked=false
+                che1.checked=false
+            }else{
+                items[i].checked=true
+                che1.checked=true
+            }
+        }
+    };
+    var commit =document.getElementById("commit")
+    commit.onclick=function (ev) {
+        var usercommit = [];
+        for(var i=0;i<items.length;i++){
+            if (items[i].checked){
+
+                usercommit.push(items[i].value)
+            }
+        }
+        alert(usercommit)
+    };
+      for(var i=0;i<items.length;i++) {
+          items[i].onclick = function (){
+              var flag=true
+            for(var b=0;b<items.length;b++){
+
+                if(items[b].checked==false){
+                    var flag = false
+                }
+            }
+            che1.checked=flag
+
+        }
+      }
+
+
+
+
+</script>
+  </form>
+
+</body>
+</html>

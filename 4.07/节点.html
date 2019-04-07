@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul >
+        <li id="list">1</li><li id="fri">2</li>
+        <li>3</li>
+        <li>4</li>
+
+    </ul>
+
+    <button id="bt">按钮</button>
+
+    <button id="bt2">按钮</button>
+    <button id="bt3">按钮</button>
+    <input type="text" value="123" id="user"/>
+<script >
+        var bt =document.getElementById("bt")
+        bt.onclick = function (ev) {
+            var list =document.getElementById("list")
+            var list2 = list.parentNode
+            alert(list2.innerHTML)
+        }
+        var bt2 =document.getElementById("bt2")
+        bt2.onclick = function (ev) {
+            var fri =document.getElementById("fri")
+            var fri2 = fri.previousSibling
+            alert(fri2.innerHTML)
+        }
+        var bt3 = document.getElementById("bt3")
+        bt3.onclick = function (ev) {
+            var user = document.getElementById("user")
+            alert(user.value)
+        }
+</script>
+
+</body>
+</html>
