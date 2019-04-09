@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .total{
+            width: 200px;
+            height: 300px;
+        }
+        #city li{
+            list-style: none;
+            display: inline;
+            border: solid 1px antiquewhite;
+            padding: 10px;
+
+        }
+    </style>
+    <script>
+        window.onload= function (ev) {
+            var bt1 = document.getElementById("bt1")
+            bt1.onclick = function (ev1) {
+                var li = document.createElement("li")
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="total">
+    <div class="inner">
+        <p>你喜欢什么城市?</p>
+        <ul id="city">
+        <li id="bj">北京</li>
+        <li>武汉</li>
+        <li>上海</li>
+        </ul>
+    </div>
+    <div class="btn">
+        <div><button id="bt1" >创建广州节点 加入city</button></div>
+        <div><button id="bt2" >广州节点 插入#bj之前</button></div>
+        <div><button id="bt3" >广州替换#bj</button></div>
+        <div><button id="bt4" >删除#bj</button></div>
+        <div><button id="bt5" >读取#cityhtml代码</button></div>
+        <div><button id="bt6" >设置#bj 里面代码</button></div>
+    </div>
+</div>
+</body>
+</html>
