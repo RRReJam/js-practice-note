@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function (ev) {
+            var allA = document.getElementsByTagName('a')
+
+            for (var i = 0; i < allA.length; i++) {
+
+                allA[i].onclick = function () {
+
+                    var tr = this.parentNode.parentNode
+                    var tname = tr.getElementsByTagName("td")[0].innerHTML
+                    if (confirm("确认" + tname + "删除?")) {
+                        tr.parentNode.removeChild(tr)
+                    }
+                    return false;
+    
+                }
+
+
+            }
+            var bt = document.getElementById("addbutton")
+            bt.onclick = function (ev1) {
+
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var money = document.getElementById("money").value;
+                var tr = document.createElement('tr')
+                var nametd = document.createElement("td")
+                var emailtd = document.createElement("td")
+                var moneytd = document.createElement("td")
+                var deletetd = document.createElement("td")
+                var a = document.createElement("a")
+                var nametext = document.createTextNode(name)
+                var emailtext = document.createTextNode(email)
+                var moneytext = document.createTextNode(money)
+                var atext = document.createTextNode("delete")
+                nametd.appendChild(nametext)
+                emailtd.appendChild(emailtext)
+                moneytd.append(moneytext)
+                a.appendChild(atext)
+                deletetd.appendChild(a)
+                tr.appendChild(nametd)
+                tr.appendChild(emailtd)
+                tr.appendChild(moneytd)
+                tr.appendChild(deletetd)
+                var emtable = document.getElementById("emtable")
+                var tbody = emtable.getElementsByTagName('tbody')[0]
+                tbody.appendChild(tr)
+                a.href = "javascript:"
+                a.onclick = function () {
+
+                    var tr = this.parentNode.parentNode
+                    var tname = tr.getElementsByTagName("td")[0].innerHTML
+                    if (confirm("确认" + tname + "删除?")) {
+                        tr.parentNode.removeChild(tr)
+                    }
+                    return false;
+
+                }
+
+
+            }
+        }
+    </script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+  <table id="emtable" border="1">
+      <tr>
+          <th>Name</th>
+          <th>email</th>
+          <th>money</th>
+
+      </tr>
+      <tr>
+          <td>tom</td>
+          <td>tom@123.com</td>
+          <td>999</td>
+          <td><a href="deletetr?id=001">delete</a></td>
+      </tr>
+      <tr>
+          <td>mj</td>
+          <td>mj@123.com</td>
+          <td>99999</td>
+          <td><a href="deletetr?id=002">delete</a></td>
+      </tr>
+      <tr>
+          <td>ag</td>
+          <td>ag@123.com</td>
+          <td>99</td>
+          <td><a href="deletetr?id=003">delete</a></td>
+      </tr>
+  </table>
+<div>
+    <h2>添加</h2>
+    <table border="1">
+        <tr>
+            <td class="word">name:</td>
+            <td class="inp">
+                <input type="text" name="ename" id="name" />
+            </td>
+        </tr>
+        <tr>
+            <td class="word">email:</td>
+            <td class="inp">
+                <input type="text" name="eemail" id="email" />
+            </td>
+        </tr>
+        <tr>
+            <td class="word">money:</td>
+            <td class="inp">
+                <input type="text" name="emoney" id="money" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="addbutton">提交</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+  </table>
+
+</body>
+</html>
