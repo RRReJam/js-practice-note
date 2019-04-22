@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+     .bo1 {
+      width: 300px;
+      height: 300px;
+      background-color: rebeccapurple;
+
+    }
+  </style>
+  <script>
+    window.onload = function (ev) {
+      var bo1 = document.getElementsByClassName("bo1")
+      var bt1 = document.getElementById("bt1")
+      // bo1[0].onmouseenter = function () {
+      //   bo1[0].style.width = "500px"
+      //
+      // }
+
+
+      var getStyle = function(obj,name) {
+        if(window.getComputedStyle){
+          return getComputedStyle(obj,null)[name];
+        }else {
+          return obj.currentStyle[name];
+        }
+      }
+      alert(getStyle(bo1[0],'width'))
+
+
+
+    }
+  </script>
+</head>
+<body>
+<div class="bo1"></div>
+<button id="bt1"></button>
+
+</body>
+</html>
