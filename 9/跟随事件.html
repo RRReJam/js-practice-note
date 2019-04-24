@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style type="text/css">
+    body{
+      height: 8000px;
+      width: 5000px;
+    }
+    #box1{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+
+  </style>
+  <script>
+    window.onload = function () {
+       var box1 = document.getElementById("box1")
+      var st = document.body.scrollTop
+       document.onmousemove = function (ev) {
+           ev?ev:window.event;
+
+           var st = document.body.scrollTop || document.documentElement.scrollTop
+           var sl = document.body.scrollLeft || document.documentElement.scrollLeft
+           var x =ev.clientX
+           var y =ev.clientY
+         box1.style.left = x+sl+'px'
+         box1.style.top = y+st+"px"
+       }
+
+    }
+  </script>
+</head>
+<body>
+<div id="box1"></div>
+
+</body>
+</html>
