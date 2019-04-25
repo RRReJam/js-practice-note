@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+  window.onload = function (ev) {
+    var btn01 = document.getElementById("btn01")
+    function bind( obj , eventstr , callback) {
+              if(obj.addEventListener){
+                obj.addEventListener(eventstr, callback , false)
+              }else {
+                obj.attachEvent ('on'+eventstr , callback)
+              }
+    }
+    bind(btn01 , 'click' , function () {
+        alert("1111")
+    })
+  }
+</script>
+<body>
+   <button id="btn01"></button>
+</body>
+</html>

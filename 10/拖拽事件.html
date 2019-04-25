@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style type="text/css">
+     #bo1 {
+       width: 100px;
+       height: 100px;
+       background-color: red;
+       position: absolute;
+     }
+  </style>
+  <script>
+    window.onload = function () {
+      var bo1 = document.getElementById("bo1")
+      bo1.onmousedown = function () {
+          document.onmousemove = function (ev) {
+            ev = ev||window.event;
+            var  x = ev.clientX
+            var y = ev.clientY
+            bo1.style.left = x+'px'
+            bo1.style.top = y+'px'
+
+
+
+          }
+          document.onmouseup = function (ev) {
+            document.onmousemove = null ;
+            document.onmouseup = null;
+          }
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="bo1"></div>
+
+</body>
+</html>
