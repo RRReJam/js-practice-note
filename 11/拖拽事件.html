@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style type="text/css">
+     #bo1 {
+       width: 100px;
+       height: 100px;
+       background-color: red;
+       position: absolute;
+     }
+     #bo2 {
+       width: 100px;
+       height: 100px;
+       background-color: violet;
+       position: absolute;
+       left: 300px;
+       top: 300px;
+     }
+  </style>
+  <script>
+    window.onload = function () {
+      var bo1 = document.getElementById('bo1')
+      var bo2 = document.getElementById('bo2')
+      function drag(obj) {
+        obj.onmousedown = function (ev) {
+          ev = ev ||window.event
+          var x = ev.clientX - obj.offsetLeft
+          var y = ev.clientY - obj.offsetTop
+
+          document.onmousemove = function (ev) {
+            ev = ev||window.event;
+            var x1 = ev.clientX - x
+            var y1 = ev.clientY - y
+            obj.style.left = x1+'px'
+            obj.style.top = y1+'px'
+
+
+
+          }
+          document.onmouseup = function (ev) {
+            document.onmousemove = null ;
+            document.onmouseup = null;
+          }
+        }
+      }
+      drag(bo1)
+      drag(bo2)
+
+    }
+  </script>
+</head>
+<body>
+<div id="bo1"></div>
+<div id="bo2"></div>
+
+</body>
+</html>

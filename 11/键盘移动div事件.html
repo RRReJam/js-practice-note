@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #bo1{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+  </style>
+  <script>
+           window.onload = function () {
+             var bo1 = document.getElementById('bo1')
+             document.onkeydown = function (ev) {
+               ev = ev||window.event
+               switch (ev.keyCode) {
+                 case 37:
+                   bo1.style.left = bo1.offsetLeft  - 50 + 'px'
+                       break;
+                 case 39:
+                   bo1.style.left = bo1.offsetLeft + 50 +'px'
+                       break;
+                 case 38:
+                   bo1.style.top = bo1.offsetTop - 50 + 'px'
+                       break;
+                 case 40:
+                   bo1.style.top = bo1.offsetTop + 50 + 'px'
+                       break;
+                 
+               }
+             }
+           }
+  </script>
+</head>
+<body>
+<div id="bo1"></div>
+</body>
+</html>

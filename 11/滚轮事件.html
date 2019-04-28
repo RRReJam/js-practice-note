@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #bo1{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      min-height: 50px;
+
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var bo1 = document.getElementById("bo1")
+      bo1.onwheel = bo1.onwheel || bo1.onmousewheel
+      bo1.onwheel = function (ev) {
+        ev = ev || window.event
+          if (ev.wheelDelta > 0 || ev.detail<0) {
+            bo1.style.height = bo1.clientHeight - 10 +'px'
+          } else {
+            bo1.style.height = bo1.clientHeight + 10 +'px'
+          }
+        return false
+      }
+    }
+  </script>
+</head>
+<body style="height: 9000px">
+<div id="bo1"></div>
+</body>
+</html>
