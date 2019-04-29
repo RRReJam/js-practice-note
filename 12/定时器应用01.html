@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #bo1{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+  </style>
+  <script>
+    window.onload = function (ev) {
+      var bt1 = document.getElementById("bt1")
+      var bo1 = document.getElementById("bo1")
+      var timer
+      bt1.onclick = function (ev) {
+        clearInterval(timer)
+        timer = setInterval(function () {
+          var oldleft = bo1.offsetLeft
+          var newleft = bo1.offsetLeft + 17
+          if(newleft>800){
+            newleft=800
+          }
+
+          if(bo1.offsetLeft === 800){
+            clearInterval(timer)
+          }
+
+          bo1.style.left = newleft+"px"
+
+        }, 30)
+      }
+    }
+  </script>
+</head>
+<body>
+<button id="bt1">点我</button>
+<br><br>
+<div id="bo1"></div>
+</body>
+</html>
