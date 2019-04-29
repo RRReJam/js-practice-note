@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    window.onload = function () {
+      var timer
+      var ca = document.getElementById("ca")
+         var i = 0
+      setInterval(function () {
+           ca.innerHTML = i++
+        if(i == 99){
+          clearInterval(1)
+        }
+
+      },10)
+      var img = document.getElementById("img")
+      var imgArr = ['image/1.jpg','image/1.jpg','image/1.jpg',666,666]
+      var index = 0
+
+      var bt1 =document.getElementById("bt1")
+      var bt2 = document.getElementById("bt2")
+      bt1.onclick =function (ev) {
+        clearInterval(timer)
+        timer = setInterval(function () {
+          // if(index > 4){
+          //   index = 0
+          // }
+
+          img.src = imgArr[index]
+          index ++
+
+        },1000)
+      }
+      bt2.onclick = function (ev) {
+        clearInterval(timer)
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="ca"></div>
+<div id="img1"><img  id="img" src=""></div>
+<br>
+<button id="bt1">start</button>
+<button id="bt2">stop</button>
+
+</body>
+</html>
