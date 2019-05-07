@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    #container{
+      width: 305px;
+      height: 238px;
+      margin: 50px auto;
+      background-color: yellowgreen;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    #imglist{
+      position: absolute;
+      list-style: none;
+    }
+    #imglist li{
+      float: left;
+      margin:  0 10px ;
+    }
+    #nav{
+      position: absolute;
+      bottom: 15px;
+
+    }
+    #nav a {
+      float: left;
+      width: 15px;
+      height: 15px;
+      margin: 0 3px;
+      background-color: red;
+      opacity: 0.5;
+    }
+    #nav a:hover{
+      background-color: black;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var imglist =document.getElementById("imglist")
+      var imgarr = document.getElementsByTagName("img")
+      imglist.style.width = 305 * imgarr.length + "px"
+      var nav = document.getElementById("nav")
+      var container =document.getElementById("container")
+      nav.style.left = (container.offsetWidth - nav.offsetWidth)/2 +'px'
+      var index = 0
+      var aAll = document.getElementsByTagName('a')
+      aAll[index].style.backgroundColor = 'black';
+      for(var i =0;i<aAll.length;i++){
+         aAll[i].num = i;
+        aAll[i].onclick = function () {
+          clearInterval(timer)
+            index = this.num
+             imglist.style.left =-305*index +"px"
+            setA()
+          move(imglist,"left",-308*index,20,function () {
+               autochange()
+          })
+
+
+
+        }
+        }
+        autochange();
+
+      var timer
+      function autochange() {
+       timer =  setInterval(function () {
+
+          index++;
+          index %= imgarr.length;
+
+          move(imglist,"left",-308*index,20,function () {
+            setA()
+          })
+          
+        },3000)
+      }
+
+
+      function setA () {
+        for (var i = 0; i < aAll.length; i++) {
+          if(index>=imgarr.length-1){
+            index = 0;
+            imglist.style.left = 0;
+          }
+          aAll[i].style.backgroundColor = ""
+
+        }
+        aAll[index].style.backgroundColor='black'
+      }
+
+    }
+
+  </script>
+</head>
+<body>
+<div id="container">
+   <ul id="imglist">
+
+     <li><img src="image/3.png" alt=""></li>
+     <li><img src="image/2.png" alt=""></li>
+     <li><img src="image/2.png" alt=""></li>
+     <li><img src="image/2.png" alt=""></li>
+     <li><img src="image/3.png" alt=""></li>
+
+   </ul>
+  <div id="nav">
+    <a href="javascript:;"></a>
+    <a href="javascript:;"></a>
+    <a href="javascript:;"></a>
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<script src="tools.js"></script>
+</body>
+</html>
